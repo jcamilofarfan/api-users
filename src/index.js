@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 
 const app = express();
 
@@ -8,10 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 // Routes
-//TODO: changue routes in src/routes
-router.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(require('./routes/index'));
 
 app.listen(3000);
 console.log('Server on port', 3000);
